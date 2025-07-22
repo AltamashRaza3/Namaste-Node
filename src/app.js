@@ -3,21 +3,27 @@ const express = require('express');
 //Creating a new express.js application
 const app = express();
 
-// This will handle GET call
- app.get("/user",(req,res)=>{
-  res.send({firstName: "Altamash",lastName:"Raza"})
-});
 
-app.post("/user",(req,res)=> {
-  res.send("Data Scuccessfully saved to the Database");
+// Advanced Routing:
+app.get(/.*fly$/,(req,res)=>{
+  res.send({firstName: "Altamash",lastName: "Raza"});
 })
-app.delete("/user",(req,res)=>{
-  res.send("Data is successfully deleted");
-}) 
+
+// This will handle GET call
+//  app.get("/user",(req,res)=>{
+//   res.send({firstName: "Altamash",lastName:"Raza"})
+// });
+
+// app.post("/user",(req,res)=> {
+//   res.send("Data Scuccessfully saved to the Database");
+// })
+// app.delete("/user",(req,res)=>{
+//   res.send("Data is successfully deleted");
+// }) 
 // this will match all the HTTP method API call to /test
-app.use("/test",(req,res)=>{
-  res.send("Hello from the server");
-})
+// app.use("/test",(req,res)=>{
+//   res.send("Hello from the server");
+// })
 
 // app.get("/",(req,res)=>{
 //   res.send("Namaste from the Dashboard");
