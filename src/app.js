@@ -3,11 +3,23 @@ const express = require('express');
 //Creating a new express.js application
 const app = express();
 
+// Dynamic API's
+ app.get("/user/:userId",(req,res)=>{
+  console.log(req.params)
+  res.send({firstName: "Altamash",lastName:"Raza"});
+})
+
+
+// Query Parms in the routes:
+// app.get("/user",(req,res)=>{
+//   console.log(req.query)
+//   res.send({firstName: "Altamash",lastName:"Raza"});
+// })
 
 // Advanced Routing:
-app.get(/.*fly$/,(req,res)=>{
-  res.send({firstName: "Altamash",lastName: "Raza"});
-})
+// app.get(/.*fly$/,(req,res)=>{
+//   res.send({firstName: "Altamash",lastName: "Raza"});
+// })
 
 // This will handle GET call
 //  app.get("/user",(req,res)=>{
