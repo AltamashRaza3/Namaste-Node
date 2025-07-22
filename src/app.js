@@ -16,5 +16,5 @@ app.get("/hello",(req,res)=>{
 })
 
 app.listen(3000,()=>{
-  console.log("Server is successfully listining on Port n0 3000");
+  console.log("Server is successfully listining on Port 3000");
 });
