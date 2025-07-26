@@ -1,0 +1,8 @@
+- create a free clustre on MongoDB offical website(Mongo Atlas)
+- Install mongoose library
+- Connect your application to the DataBase "connection-url/devTinder"
+- Call the connectDB functions and connect to database before starting  application on 7777
+-Create a userSchema and userModel 
+- Create POST /singup API to add data to database
+- Push some documents using API call from Postman  
+- Error Handling using try,catch
