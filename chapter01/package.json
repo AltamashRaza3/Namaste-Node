@@ -1,20 +1,25 @@
 {
   "name": "devtinder",
   "version": "1.0.0",
-  "description": "Tinder for devs",
   "main": "index.js",
   "scripts": {
     "start": "node src/app.js",
-    "dev": " nodemon src/app.js",
+    "dev": "nodemon src/app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [
-    "nodejs",
-    "javaScript"
-  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AltamashRaza3/Namaste-Node.git"
+  },
   "author": "Altamash Raza",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AltamashRaza3/Namaste-Node/issues"
+  },
+  "homepage": "https://github.com/AltamashRaza3/Namaste-Node#readme",
+  "description": "",
   "dependencies": {
-    "express": "^5.1.0"
+    "express": "^5.1.0",
+    "mongoose": "^8.16.5"
   }
 }

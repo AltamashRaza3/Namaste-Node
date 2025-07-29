@@ -1,0 +1,3 @@
+- JS object vs JSON(difference)
+- Add the express.json middleware to your app
+- Make your signup API dynamic to recive datta from the end user(POSTMAN or Browser)
