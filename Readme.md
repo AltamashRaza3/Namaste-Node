@@ -15,12 +15,12 @@ A comprehensive collection of **Namaste Node.js** course materials, assignments,
 ## 🗂️ Repository Structure
 
 📦 Namaste-Node
-├── 📁 Chapter01/ # Introduction to Node.js
-├── 📁 Chapter02/ # JS on the Server
-├── 📁 Chapter03/ # Writing Node.js Code
-├── 📁 Chapter04/ # DevTinder Project
-├── 📁 Chapter05/ # Advanced Concepts
-└── 📄 README.md # You are here!
+    ├── 📁 Chapter01/ # Introduction to Node.js
+    ├── 📁 Chapter02/ # JS on the Server
+    ├── 📁 Chapter03/ # Writing Node.js Code
+    ├── 📁 Chapter04/ # DevTinder Project
+    ├── 📁 Chapter05/ # Advanced Concepts
+    └── 📄 README.md # You are here!
 
 
 ## 📖 Course Content
@@ -94,11 +94,6 @@ This is a personal learning repository, but if you find any issues or have sugge
 4. Push to the branch (`git push origin feature/improvement`)
 5. Open a Pull Request
 
-## 📧 Contact
-
-- **GitHub**: [@AltamashRaza3](https://github.com/AltamashRaza3)
-- **LinkedIn**: [Your LinkedIn Profile]
-- **Email**: [Your Email]
 
 ## 🎯 Course Progress
 
