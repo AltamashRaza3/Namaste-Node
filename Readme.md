@@ -1,9 +1,5 @@
 # 🚀 Namaste Node.js - Learning Journey
 
-![Node.js](https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
-![Express.js](https://img.shields.io/badge/Express.js-404D59?style=for-the-badge)
-
 A comprehensive collection of **Namaste Node.js** course materials, assignments, and projects by [Akshay Saini](https://namastedev.com/). This repository contains my learning journey through backend development with Node.js from scratch to advanced concepts.
 
 ## 📚 About Namaste Node.js
