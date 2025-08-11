@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const validtor= require('validator');
 const userSchema = new mongoose.Schema({
   firstName:{
     type: String,
@@ -17,11 +18,20 @@ const userSchema = new mongoose.Schema({
     trim: true,
     lowercase: true,
     unique: true,  
-
+    validate(value){
+      if(!validator.isEmail(value)){
+        throw new Error("Inavlid GmailId: "+ value)
+      }
+    }
   },
   password:{
     type:String,
-    required: true
+    required: true,
+     validate(value){
+      if(!validator.isStrongPassword(value)){
+        throw new Error("Enter strong Password: "+ value)
+      }
+    }
   },
   age:{
     type:Number,
@@ -42,6 +52,11 @@ const userSchema = new mongoose.Schema({
   photoUrl:{
     type: String,
     default: "https://www.pnrao.com/wp-content/uploads/2023/06/dummy-user-male.jpg",
+    validate(value){
+      if(!validator.isURL(value)){
+        throw new Error("Invalid Photo URL: "+ value)
+      }
+    }
   },
   description:{
     type: String,
@@ -49,7 +64,7 @@ const userSchema = new mongoose.Schema({
   skills:{
     type: [String],
     default: "This is default description",
-    
+
   }
 },{
   timestamps: true,
