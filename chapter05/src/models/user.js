@@ -21,16 +21,26 @@ const userSchema = new mongoose.Schema({
   },
   password:{
     type:String,
+    required: true
   },
   age:{
-    type:String,
+    type:Number,
   },
   gender:{
     type: String,
     required: true,
     trim: true,
-    
   },
+  photoUrl:{
+    type: String,
+  },
+  description:{
+    type: String,
+  },
+  skills:{
+    type: [String],
+    default: "This is default description"
+  }
 });
 
 module.exports = mongoose.model("User",userSchema); 
