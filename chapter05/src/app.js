@@ -32,6 +32,26 @@ try {
   }
 }) 
  
+app.post("/login",async(req,res) => {
+  try {
+    const {emailId, password} =req.body;
+
+    const user = await User.findOne({emailId:emailId});
+    if(!user){
+      throw new Error ("EmailId is not found");
+    }
+    const isPasswordValid = await bcrypt.compare(password,user.password)
+    if(isPasswordValid){
+      res.send("Login successfull");
+    }
+    else{
+      throw new Error ("Password is not correct");
+    }
+  } catch (error) {
+    res.status(400).send("Error: "+ error.message);
+  }
+})
+
 //Find user by email-Id
 app.get("/user",async(req,res)=>{
   const userEmail= req.body.emailId;
