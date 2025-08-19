@@ -2,17 +2,25 @@ const express =require('express');
 const connectDB= require("./config/database");
 const app = express();
 const User = require("./models/user");
+const {validateSignupData} = require("./utils/validation")
 
 app.use(express.json());
 // Creating API for posting user Data
 app.post("/signup",async (req,res)=>{
+try {
+  // Validation of data
+  validateSignupData(req); 
+  // Encrypt the password
+
+
+
   // Creating a new insatance for the user Model
     const user = new User(req.body);
-  try {
+  
     await user.save();
     res.send("User Added Successfully");
   } catch (error) {
-    res.status(400).send("Error in saving the user: "+ error.message)
+    res.status(400).send("Error: "+ error.message)
   }
 }) 
  
