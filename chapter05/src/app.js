@@ -2,7 +2,8 @@ const express =require('express');
 const connectDB= require("./config/database");
 const app = express();
 const User = require("./models/user");
-const {validateSignupData} = require("./utils/validation")
+const {validateSignupData} = require("./utils/validation");
+const bcrypt = require("bcrypt");
 
 app.use(express.json());
 // Creating API for posting user Data
@@ -10,13 +11,20 @@ app.post("/signup",async (req,res)=>{
 try {
   // Validation of data
   validateSignupData(req); 
+  const {firstName,lastName,emailId,password,gender} = req.body;
+
   // Encrypt the password
-
-
+  const passwordHash = await bcrypt.hash(password,10); 
+  console.log(passwordHash);
 
   // Creating a new insatance for the user Model
-    const user = new User(req.body);
-  
+    const user = new User({
+      firstName,
+      lastName,
+      emailId,
+      password: passwordHash,
+      gender,
+    });
     await user.save();
     res.send("User Added Successfully");
   } catch (error) {
@@ -65,7 +73,7 @@ app.get("/feed",async(req,res)=>{
 app.delete("/user",async(req,res)=>{
   const userId =req.body.userId;
   try {
-    const user= await User.findOneAndDelete(userId)
+    const user= await User.findByIdAndDelete(userId)
     res.send("User deleted successfully");
   } catch (error) {
     res.status(400).send("Something went wrong");
@@ -91,7 +99,7 @@ app.patch("/user/:userId",async(req,res)=>{
   if(!isUpdateAllowed){
     throw new Error("Update not allowed");
   }
-  if(data?.skills.data.length>10){
+  if(data?.skills && data.skills.length>10){
     throw new Error("Skills can not be more than 10")
   }
     const UserData=await User.findByIdAndUpdate({_id:userId},data,{

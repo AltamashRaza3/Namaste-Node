@@ -1,16 +1,15 @@
 const mongoose = require('mongoose');
 const validator= require('validator');
+
 const userSchema = new mongoose.Schema({
   firstName:{
     type: String,
     required: true,
     minLength: 3,
-    maxLenght: 50
-
+    maxLength: 50,
   },
   lastName:{
     type:String,
-
   },
   emailId:{
     type: String,
@@ -63,7 +62,7 @@ const userSchema = new mongoose.Schema({
   },
   skills:{
     type: [String],
-    default: "This is default description",
+    default: ["This is default description"],
 
   }
 },{
