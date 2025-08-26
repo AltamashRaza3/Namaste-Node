@@ -42,6 +42,11 @@ app.post("/login",async(req,res) => {
     }
     const isPasswordValid = await bcrypt.compare(password,user.password)
     if(isPasswordValid){
+
+     // Create JWT Token
+
+     // Add the Token to cookies and send the response back to the user.
+      res.cookie("token","khdfihaelfuuerofueruibrfuiei")
       res.send("Login successfull");
     }
     else{
@@ -51,6 +56,13 @@ app.post("/login",async(req,res) => {
     res.status(400).send("Error: "+ error.message);
   }
 })
+
+app.get('/profile',async(req,res)=>{
+  const cookie = req.cookies;
+  console.log(cookie);
+  res.send("Reading cookies");
+})
+
 
 //Find user by email-Id
 app.get("/user",async(req,res)=>{
