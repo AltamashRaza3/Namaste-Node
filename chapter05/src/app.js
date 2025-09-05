@@ -58,7 +58,11 @@ app.post("/login",async(req,res) => {
 })
 
 app.get('/profile',async(req,res)=>{
-  const cookie = req.cookies;
+  const cookies = req.cookies;
+  const {token} = cookies;
+// Validate my token:
+
+
   console.log(cookie);
   res.send("Reading cookies");
 })
