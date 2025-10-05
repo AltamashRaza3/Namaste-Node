@@ -158,6 +158,6 @@ connectDB()
   console.log("Server is started listening on 7777");
 })
 }).catch((error)=>{
-  console.log("Database can't be connected",error)
+  console.log("Database can't be connected..",error)
 })
 
