@@ -105,7 +105,7 @@ app.get("/feed",async(req,res)=>{
   }
 })
 
-// Delete a user from the database
+// Delete a user from the database     
 app.delete("/user",async(req,res)=>{
   const userId =req.body.userId;
   try {
